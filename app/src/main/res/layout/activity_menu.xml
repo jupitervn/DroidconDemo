@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="32dp"
+    android:layout_marginRight="32dp"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/bt_constraint_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Constraint Set" />
+
+    <Button
+        android:id="@+id/bt_performance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Performance Benchmark"/>
+
+    <Button
+        android:id="@+id/bt_tricks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tricks"/>
+
+</LinearLayout>

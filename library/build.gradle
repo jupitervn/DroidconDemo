@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion '25.0.0'
+}
+
+dependencies {
+    compile 'com.google.dexmaker:dexmaker:1.1'
+}
+
+group = "org.lucasr.probe"
+version = "0.1.5"
+
+
+//apply from: "${rootDir}/gradle/scripts/gradle-plugin-mvn-push.gradle"
+
+apply plugin: 'maven'
+afterEvaluate { project ->
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                pom.whenConfigured {
+                    def dep = dependencies.find { it.groupId == 'com.google.dexmaker' }
+                    dep.optional = true
+                    dep.scope = null
+                }
+                repository(url: uri('../.repo/'))
+            }
+        }
+    }
+}
+
+
+//apply from: "${rootDir}/gradle/scripts/gradle-mvn-push.gradle"
+
+//afterEvaluate { project ->
+//    uploadArchives {
+//        repositories {
+//            mavenDeployer {
+//                pom.whenConfigured {
+//                    def dep = dependencies.find { it.groupId == 'com.google.dexmaker' }
+//                    dep.optional = true
+//                    dep.scope = null
+//                }
+//            }
+//        }
+//    }
+//}

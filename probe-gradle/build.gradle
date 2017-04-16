@@ -1,0 +1,28 @@
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+    compile 'com.squareup:javawriter:2.5.0'
+    compile 'com.android.tools.build:gradle:2.2.0'
+}
+group = "org.lucasr.probe"
+version = "0.1.5"
+
+
+//apply from: "${rootDir}/gradle/scripts/gradle-plugin-mvn-push.gradle"
+
+apply plugin: 'maven'
+afterEvaluate { project ->
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository(url: uri('../.repo/'))
+            }
+        }
+    }
+}

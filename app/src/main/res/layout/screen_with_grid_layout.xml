@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:columnCount="2">
+
+    <TextView
+        android:gravity="center"
+        android:text="Login with Facebook"
+        android:textSize="24sp"
+        app:layout_columnSpan="2"
+        app:layout_gravity="fill_horizontal" />
+
+    <TextView android:text="Email:" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="0dp"
+        app:layout_gravity="fill_horizontal" />
+
+    <TextView
+        android:layout_marginRight="20dp"
+        android:text="Password" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="0dp"
+        app:layout_gravity="fill_horizontal" />
+
+    <TextView android:text="Birthday" />
+
+    <EditText
+        android:id="@+id/et_birthday"
+        android:layout_width="0dp"
+        app:layout_gravity="fill_horizontal" />
+
+    <TextView android:text="Address" />
+
+    <EditText
+        android:id="@+id/et_address"
+        android:layout_width="0dp"
+        app:layout_gravity="fill_horizontal" />
+
+
+</android.support.v7.widget.GridLayout>
